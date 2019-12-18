@@ -34,53 +34,24 @@ class TransactionList extends StatelessWidget {
           : ListView.builder(
               itemBuilder: (_, index) {
                 return Card(
-                  margin: EdgeInsets.all(4),
-                  child: Row(
-                    children: <Widget>[
-                      SizedBox(
-                        width: 140,
-                        height: 70,
-                        child: Container(
-                          margin: EdgeInsets.fromLTRB(30, 10, 5, 10),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).primaryColorLight,
-                            border: Border.all(
-                              color: Theme.of(context).primaryColorDark,
-                              width: 2,
-                            ),
-                          ),
-                          padding: EdgeInsets.all(10),
-                          child: Text(
-                            '$moneySymbol${transactions[index].amount.toStringAsFixed(2)}',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                              color: Theme.of(context).accentColor,
-                            ),
-                          ),
-                        ),
+                  elevation: 5,
+                  margin: EdgeInsets.symmetric(vertical: 2, horizontal: 5),
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      radius: 30,
+                      child: Padding(
+                        padding: EdgeInsets.all(5),
+                        child: FittedBox(
+                            child: Text(
+                                '${moneySymbol}${transactions[index].amount.toStringAsFixed(2)}')),
                       ),
-                      Container(
-                        margin: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              transactions[index].title,
-                              style: Theme.of(context).textTheme.title,
-                            ),
-                            Text(
-                                DateFormat.yMMMd()
-                                    .addPattern('jms')
-                                    .format(transactions[index].date),
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                )),
-                          ],
-                        ),
-                      ),
-                    ],
+                    ),
+                    title: Text(
+                      transactions[index].title,
+                      style: Theme.of(context).textTheme.title,
+                    ),
+                    subtitle: Text(
+                        DateFormat.yMMMd().format(transactions[index].date)),
                   ),
                 );
               },
