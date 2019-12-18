@@ -12,7 +12,7 @@ class TransactionList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 500,
       child: transactions.isEmpty
           ? Column(
               children: <Widget>[
@@ -44,7 +44,7 @@ class TransactionList extends StatelessWidget {
                         padding: EdgeInsets.all(5),
                         child: FittedBox(
                             child: Text(
-                                '${moneySymbol}${transactions[index].amount.toStringAsFixed(2)}')),
+                                '$moneySymbol${transactions[index].amount.toStringAsFixed(2)}')),
                       ),
                     ),
                     title: Text(
