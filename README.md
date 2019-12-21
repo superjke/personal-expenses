@@ -2,9 +2,7 @@
 
 A Flutter project.
 
-![Home screen](https://imgur.com/7xPiQY9)
-
-![Add item screen](https://imgur.com/YePehEO)
-
-![Date picker screen](https://imgur.com/LuI30uD)
+<img src="https://i.imgur.com/7xPiQY9.png" height="500">
+<img src="https://i.imgur.com/YePehEO.png" height="500">
+<img src="https://i.imgur.com/LuI30uD.png" height="500">
 
