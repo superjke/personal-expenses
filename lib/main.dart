@@ -5,6 +5,7 @@ import './widgets/new_transaction.dart';
 import './widgets/transaction_list.dart';
 import './widgets/chart.dart';
 import './models/transaction.dart';
+import './models/theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,29 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
-      theme: ThemeData(
-          primarySwatch: Colors.green,
-          accentColor: Colors.black,
-          textTheme: ThemeData.light().textTheme.copyWith(
-                title: TextStyle(
-                  fontFamily: 'OpenSans',
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-                button: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold),
-              ),
-          appBarTheme: AppBarTheme(
-            color: Colors.indigo,
-            textTheme: ThemeData.light().textTheme.copyWith(
-                  title: TextStyle(
-                      fontFamily: 'OpenSans',
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-          ),
-          fontFamily: 'Quicksand'),
+      theme: themeData,
       home: MyHomePage(),
     );
   }
