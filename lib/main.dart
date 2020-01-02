@@ -7,16 +7,16 @@ import './models/transaction.dart';
 import './models/theme.dart';
 
 void main() {
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Personal Expenses',
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     final appBar = AppBar(
       title: Text('Personal Expenses'),
       actions: <Widget>[
